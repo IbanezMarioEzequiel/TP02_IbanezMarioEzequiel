@@ -1,4 +1,5 @@
 private Dado[] dado;
+private Tablero tablero;
 private int numeroArray;
 private int contador;
 void setup(){
@@ -6,14 +7,19 @@ void setup(){
   numeroArray=4;
   contador =0;
   dado=new Dado[numeroArray];
+  tablero=new Tablero(new PVector(width/2,height/2));
 }
 
 void draw(){
-for(int i=0; i<contador; i++){
+  tablero.display();
+  for(int i=0; i<contador; i++){
+    tablero.display();
+    tablero.setDado(dado[i]);
     dado[i].display();
+    tablero.mostrarNumero();
   }
 }
-void keyPressed(){
+void keyReleased(){
   if(key=='a'){
     if(contador<numeroArray){
       println("----la lista comenzo----a");
