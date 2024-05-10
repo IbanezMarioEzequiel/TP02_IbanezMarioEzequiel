@@ -21,5 +21,27 @@ public class Rana{
   public void setVelocidad(PVector vel){
     this.velocidad=vel;
   }
+  
+public void display(){
+  fill(#4DFA05);
+  rectMode(CENTER);
+  rect(this.posicion.x,this.posicion.y,12,8);
+}
+
+public void movimiento(){
+  if(key=='d'){
+    this.posicion.x+=this.velocidad.x;
+  }
+   if(key=='a'){
+    this.posicion.x-=this.velocidad.x;
+  }
+   if(key=='w'){
+    this.posicion.y-=this.velocidad.y;
+  }
+  if(key=='s'){
+    this.posicion.y+=this.velocidad.y;
+    }
+  }
+
 
 }

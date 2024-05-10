@@ -3,7 +3,8 @@ public class Terreno extends GameObject{
   private int  alto;
   private int colorC;
   
-  Terreno(){
+  Terreno(PVector pos){
+    this.posicion=pos;
   }
   
   void setAncho(int ancho){
@@ -26,7 +27,9 @@ public class Terreno extends GameObject{
   }
   
   public void display(){
-  
+  fill(colorC);
+    rectMode(CENTER);
+    rect(this.posicion.x,this.posicion.y,ancho,alto);
   }
   
 }
