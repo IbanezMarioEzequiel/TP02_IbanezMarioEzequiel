@@ -6,7 +6,7 @@ public abstract class GameObject{
     this.posicion=posicion;
   }
   
-  public PVector getPasicion(){
+  public PVector getPosicion(){
     return this.posicion;
   }
   
