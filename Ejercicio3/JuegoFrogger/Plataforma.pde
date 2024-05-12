@@ -27,11 +27,16 @@ public class Plataforma extends GameObject{
   }  
   
   void display(){
-  
+  fill(#E5091C);
+    rectMode(CENTER);
+    rect(this.posicion.x,this.posicion.y,ancho,alto);
   }
   
   void movimiento(){
-  
+  this.posicion.x-=this.velocidad.x;
+    if(this.posicion.x<0){
+      this.posicion.x=width;
+    }
   }
   
 }

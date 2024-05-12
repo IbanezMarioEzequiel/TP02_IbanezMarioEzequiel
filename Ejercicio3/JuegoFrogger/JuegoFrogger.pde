@@ -2,6 +2,7 @@ Terreno terreno;
 Terreno terreno1;
 Rana rana;
 Plataforma plataforma;
+Plataforma[] plataforma1;
 SpawnerVehiculos[] vehiculo;
 void setup(){
 size(800,600);
@@ -22,6 +23,11 @@ for(int i=0; i<vehiculo.length; i++){
   vehiculo[i]=new SpawnerVehiculos();
   vehiculo[i].generarVehiculo(plataforma);
   }
+plataforma1=new Plataforma[4];
+plataforma1[0]=new Plataforma(new PVector(width/2,height-360),new PVector(5,5),30,30);
+plataforma1[1]=new Plataforma(new PVector(width/2,height-420),new PVector(7,5),30,30);
+plataforma1[2]=new Plataforma(new PVector(width/2,height-480),new PVector(8,5),30,30);
+plataforma1[3]=new Plataforma(new PVector(width/2,height-540),new PVector(10,5),30,30);
 }
 
 void draw(){
@@ -31,6 +37,10 @@ void draw(){
   rana.display();
   for(int i=0; i<vehiculo.length; i++){
   vehiculo[i].mostrarVehiculo();
+  }
+  for(int i=0; i<plataforma1.length; i++){
+    plataforma1[i].display();
+    plataforma1[i].movimiento();
   }
 }
 
