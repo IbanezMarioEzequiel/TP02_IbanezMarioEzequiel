@@ -2,15 +2,26 @@ class Nave implements IDisplayable,IControler{
   private PVector posicion;
   private PVector velocidad; 
   private PImage imagen;
+  private ArrayList<Bala> balas;
+
 
  Nave(){
+   balas = new ArrayList<Bala>();
   }
   
- void disparar() {
+ void disparar(){
+   balas.add(new Bala(new PVector(this.posicion.x,this.posicion.y),new PVector(0,30)));
   }
 
-  void mostrarBalas() {
-   
+  void mostrarBalas(){
+   for (int i = balas.size()-1; i > 0; i--) {
+      Bala b = balas.get(i);
+      b.mostrarBala();
+      b.movimiento();
+      if (b.posicion.y < 0) {
+        balas.remove(i);
+      }
+    }
   }
 
   
